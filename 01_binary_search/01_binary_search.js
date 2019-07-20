@@ -1,4 +1,10 @@
-const binarySearch = (list, item) => {
+/**
+ * Searches recursively number from the list
+ * @param {Array} list Source array
+ * @param {number} item Search item
+ * @returns {(number|null)} Number if the value is found or NULL otherwise
+ */
+const binarySearch = (list = [], item) => {
   let low = 0;
   let heigh = list.length - 1;
 
@@ -13,3 +19,8 @@ const binarySearch = (list, item) => {
 
   return null;
 };
+
+const list = [1, 3, 5, 7, 9];
+
+console.log(binarySearch(list, 3)); // 1
+console.log(binarySearch(list, -1)); // null
