@@ -23,15 +23,10 @@ const findSmallestIndex = array => {
  * @returns {Array} New sorted array
  */
 const selectionSort = array => {
-  const sortedArray = [];
+  if (!array.length) return [];
   const copyArray = [...array];
-
-  for (let i = 0; i < array.length; i++) {
-    const smallest = findSmallestIndex(copyArray);
-    sortedArray.push(copyArray.splice(smallest, 1)[0]);
-  }
-
-  return sortedArray;
+  const smallest = copyArray.splice(findSmallestIndex(copyArray), 1);
+  return [...smallest, ...selectionSort(copyArray)];
 };
 
 const sourceArray = [5, 3, 6, 2, 10];
