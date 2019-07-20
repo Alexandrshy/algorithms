@@ -1,6 +1,9 @@
+/**
+ * Consider the factorial of the number
+ * @param {number} f Number
+ */
 const fact = f => {
   if (f === 1) return 1;
-
   return x * fact(f - 1);
 };
 
